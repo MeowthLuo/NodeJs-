@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/iconfont.css">
+    <link rel="stylesheet" href="css/Cart.css">
+    <link rel="stylesheet" href="css/peisong.css">
+    <script src="./js/cityJson.js"></script>
+    <script src="./js/citySet.js"></script>
+    <script src="./js/jquery-1.8.3.js"></script>
+    <script src="./js/Popt.js"></script>
+    <script src="./js/quanxuan.js"></script>
+    <script src="./js/number.js"></script>
+</head>
+<body>
+    <div id="head"></div>
+    <div id="header">
+        <div class="logo">
+            <a href="#" title="网易考拉" class="kaola" alt="网易考拉"></a>
+        </div>
+    </div>
+    <div id="main">
+        <h3 class="myCart"><span>我的购物车</span>
+        <span class="addrbox">
+            <label class="addrlabel">配送至</label>
+                <div class="addrright">
+                    <input type="text" id="city"/>
+                    <i class="iconfont xiajian icon-arrowdown-copy"></i>
+                </div>
+        </span>
+        </h3>
+        <div class="headmsg">
+            <div class="col col1">
+                <input type="checkbox" class="all" id="selectall">
+                <label for="selectall"><span>全选</span></label>
+            </div>
+            <div class="col col2">商品信息</div>
+            <div class="col col3">单价(元)</div>
+            <div class="col col4">数量</div>
+            <div class="col col5">金额(元)</div>
+            <div class="col col6">操作</div>
+        </div>
+        <div class="my-ware">
+            <div class="ware">
+                <input type="checkbox" class="checkboxs" >
+                <b class="warelabel"></b>
+                <strong class="warename">跨自营/店铺任选</strong>
+            </div>
+            <div class="goods">
+                <div class="goods-top">
+                    <span class="goodslabel">N元任选</span>
+                    <div class="rule">
+                        <span class="goodsrule">已满足【99元任选3件】</span>
+                        <a href="#" class="actlink">再逛逛></a>
+                    </div>
+                </div>
+                <div class="goods-main">
+                    <ul class="goods-ul">
+                       
+                    </ul>
+                </div>
+                <!-- <div class="goods-foot">
+                    <span class="discount">优惠活动：-￥0</span>
+                    <div class="allsum">
+                        <span>商品应付总计：
+                            ￥0
+                        </span>
+                    </div>
+                    <div class="taxbox">
+                        <span class="taxnum">
+                            <em class="tt">预估税费：￥0</em>
+                        </span>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </div>
+    
+    <div id="footer" style="position: relative; width: 1088px">
+        <div class="ttbar" >
+            <div class="lt">
+                    <input type="checkbox" class="all" id="selectall">
+                    <label for="selectall"><span class="lab">全选</span></label>
+                    <a class="delarticle">删除选中商品</a>
+            </div>
+            <div class="rt">
+                <p class="allgoods">
+                    已选商品
+                    <em class="num">0</em>
+                    件
+                    <span class="itm">
+                        总价（不含运费）：￥
+                        <em class="num1">
+                                0
+                            </em> 
+                    </span>
+                </p>
+                <p class="allmoney">
+                    活动优惠：-￥0
+                    <span class="itm">
+                        商品应付：￥
+                        <em class="num1">
+                                0
+                            </em> 
+                    </span>
+                    <span class="itm1">
+                        商品税费（不含运费税）：￥0
+                    </span>
+                </p>
+                <a class="gobuy">去结算</a>
+            </div>
+        </div>
+    </div>
+    <div id="match">
+        <div class="new">
+            <h4 class="newtitle">最佳搭配<b>根据你的购物车商品推荐</b>
+                <a class="rightpage">></a>
+                <span class="page"><span class="yeshu">1</span>/4</span>
+                <a  class="leftpage"><</a>
+            </h4>
+        </div>
+        <div class="newlist">
+            <ul class="oul">
+                <li class="newitem">
+                    <a href="#" class="itemimg"><img src="./images/kameng.png"/></a>
+                    <p class="itemtitle"><a>kenmont 卡蒙 网球帽女夏天防紫外线伸缩遮阳帽户外运动跑步速干太阳帽空顶帽子防晒帽3228  可调节 57cm</a></p>
+                    <div class="iteminfo">
+                        <P class="jiaqian">￥198</P>
+                        <span class="delect">
+                            <del>￥228</del>
+                        </span>
+                        <span class="comment">14已评价</span>
+                    </div>
+                </li>
+                <li class="newitem">
+                        <a href="#" class="itemimg"><img src="./images/kameng.png"/></a>
+                        <p class="itemtitle"><a>kenmont 卡蒙 网球帽女夏天防紫外线伸缩遮阳帽户外运动跑步速干太阳帽空顶帽子防晒帽3228  可调节 57cm</a></p>
+                        <div class="iteminfo">
+                            <P class="jiaqian">￥198</P>
+                            <span class="delect">
+                                <del>￥228</del>
+                            </span>
+                            <span class="comment">14已评价</span>
+                        </div>
+                </li>
+                <li class="newitem">
+                        <a href="#" class="itemimg"><img src="./images/kameng.png"/></a>
+                        <p class="itemtitle"><a>kenmont 卡蒙 网球帽女夏天防紫外线伸缩遮阳帽户外运动跑步速干太阳帽空顶帽子防晒帽3228  可调节 57cm</a></p>
+                        <div class="iteminfo">
+                            <P class="jiaqian">￥198</P>
+                            <span class="delect">
+                                <del>￥228</del>
+                            </span>
+                            <span class="comment">14已评价</span>
+                        </div>
+                </li>
+                <li class="newitem">
+                        <a href="#" class="itemimg"><img src="./images/kameng.png"/></a>
+                        <p class="itemtitle"><a>kenmont 卡蒙 网球帽女夏天防紫外线伸缩遮阳帽户外运动跑步速干太阳帽空顶帽子防晒帽3228  可调节 57cm</a></p>
+                        <div class="iteminfo">
+                            <P class="jiaqian">￥198</P>
+                            <span class="delect">
+                                <del>￥228</del>
+                            </span>
+                            <span class="comment">14已评价</span>
+                        </div>
+                </li>
+                <li class="newitem">
+                        <a href="#" class="itemimg"><img src="./images/kameng.png"/></a>
+                        <p class="itemtitle"><a>kenmont 卡蒙 网球帽女夏天防紫外线伸缩遮阳帽户外运动跑步速干太阳帽空顶帽子防晒帽3228  可调节 57cm</a></p>
+                        <div class="iteminfo">
+                            <P class="jiaqian">￥198</P>
+                            <span class="delect">
+                                <del>￥228</del>
+                            </span>
+                            <span class="comment">14已评价</span>
+                        </div>
+                </li>
+                <li class="newitem">
+                        <a href="#" class="itemimg"><img src="./images/kameng.png"/></a>
+                        <p class="itemtitle"><a>kenmont 卡蒙 网球帽女夏天防紫外线伸缩遮阳帽户外运动跑步速干太阳帽空顶帽子防晒帽3228  可调节 57cm</a></p>
+                        <div class="iteminfo">
+                            <P class="jiaqian">￥198</P>
+                            <span class="delect">
+                                <del>￥228</del>
+                            </span>
+                            <span class="comment">14已评价</span>
+                        </div>
+                </li>
+                <li class="newitem">
+                            <a href="#" class="itemimg"><img src="./images/kameng.png"/></a>
+                            <p class="itemtitle"><a>kenmont 卡蒙 网球帽女夏天防紫外线伸缩遮阳帽户外运动跑步速干太阳帽空顶帽子防晒帽3228  可调节 57cm</a></p>
+                            <div class="iteminfo">
+                                <P class="jiaqian">￥198</P>
+                                <span class="delect">
+                                    <del>￥228</del>
+                                </span>
+                                <span class="comment">14已评价</span>
+                            </div>
+                </li>
+                <li class="newitem">
+                            <a href="#" class="itemimg"><img src="./images/kameng.png"/></a>
+                            <p class="itemtitle"><a>kenmont 卡蒙 网球帽女夏天防紫外线伸缩遮阳帽户外运动跑步速干太阳帽空顶帽子防晒帽3228  可调节 57cm</a></p>
+                            <div class="iteminfo">
+                                <P class="jiaqian">￥198</P>
+                                <span class="delect">
+                                    <del>￥228</del>
+                                </span>
+                                <span class="comment">14已评价</span>
+                            </div>
+                </li>
+                <li class="newitem">
+                            <a href="#" class="itemimg"><img src="./images/kameng.png"/></a>
+                            <p class="itemtitle"><a>kenmont 卡蒙 网球帽女夏天防紫外线伸缩遮阳帽户外运动跑步速干太阳帽空顶帽子防晒帽3228  可调节 57cm</a></p>
+                            <div class="iteminfo">
+                                <P class="jiaqian">￥198</P>
+                                <span class="delect">
+                                    <del>￥228</del>
+                                </span>
+                                <span class="comment">14已评价</span>
+                            </div>
+                </li>
+                <li class="newitem">
+                            <a href="#" class="itemimg"><img src="./images/kameng.png"/></a>
+                            <p class="itemtitle"><a>kenmont 卡蒙 网球帽女夏天防紫外线伸缩遮阳帽户外运动跑步速干太阳帽空顶帽子防晒帽3228  可调节 57cm</a></p>
+                            <div class="iteminfo">
+                                <P class="jiaqian">￥198</P>
+                                <span class="delect">
+                                    <del>￥228</del>
+                                </span>
+                                <span class="comment">14已评价</span>
+                            </div>
+                </li>
+                <li class="newitem">
+                        <a href="#" class="itemimg"><img src="./images/kameng.png"/></a>
+                        <p class="itemtitle"><a>kenmont 卡蒙 网球帽女夏天防紫外线伸缩遮阳帽户外运动跑步速干太阳帽空顶帽子防晒帽3228  可调节 57cm</a></p>
+                        <div class="iteminfo">
+                            <P class="jiaqian">￥198</P>
+                            <span class="delect">
+                                <del>￥228</del>
+                            </span>
+                            <span class="comment">14已评价</span>
+                        </div>
+                 </li>
+                <li class="newitem">
+                            <a href="#" class="itemimg"><img src="./images/kameng.png"/></a>
+                            <p class="itemtitle"><a>kenmont 卡蒙 网球帽女夏天防紫外线伸缩遮阳帽户外运动跑步速干太阳帽空顶帽子防晒帽3228  可调节 57cm</a></p>
+                            <div class="iteminfo">
+                                <P class="jiaqian">￥198</P>
+                                <span class="delect">
+                                    <del>￥228</del>
+                                </span>
+                                <span class="comment">14已评价</span>
+                            </div>
+                </li>
+                <li class="newitem">
+                            <a href="#" class="itemimg"><img src="./images/kameng.png"/></a>
+                            <p class="itemtitle"><a>kenmont 卡蒙 网球帽女夏天防紫外线伸缩遮阳帽户外运动跑步速干太阳帽空顶帽子防晒帽3228  可调节 57cm</a></p>
+                            <div class="iteminfo">
+                                <P class="jiaqian">￥198</P>
+                                <span class="delect">
+                                    <del>￥228</del>
+                                </span>
+                                <span class="comment">14已评价</span>
+                            </div>
+                </li>
+                <li class="newitem">
+                            <a href="#" class="itemimg"><img src="./images/kameng.png"/></a>
+                            <p class="itemtitle"><a>kenmont 卡蒙 网球帽女夏天防紫外线伸缩遮阳帽户外运动跑步速干太阳帽空顶帽子防晒帽3228  可调节 57cm</a></p>
+                            <div class="iteminfo">
+                                <P class="jiaqian">￥198</P>
+                                <span class="delect">
+                                    <del>￥228</del>
+                                </span>
+                                <span class="comment">14已评价</span>
+                            </div>
+                </li>
+                <li class="newitem">
+                            <a href="#" class="itemimg"><img src="./images/kameng.png"/></a>
+                            <p class="itemtitle"><a>kenmont 卡蒙 网球帽女夏天防紫外线伸缩遮阳帽户外运动跑步速干太阳帽空顶帽子防晒帽3228  可调节 57cm</a></p>
+                            <div class="iteminfo">
+                                <P class="jiaqian">￥198</P>
+                                <span class="delect">
+                                    <del>￥228</del>
+                                </span>
+                                <span class="comment">14已评价</span>
+                            </div>
+                </li>
+                <li class="newitem">
+                            <a href="#" class="itemimg"><img src="./images/kameng.png"/></a>
+                            <p class="itemtitle"><a>kenmont 卡蒙 网球帽女夏天防紫外线伸缩遮阳帽户外运动跑步速干太阳帽空顶帽子防晒帽3228  可调节 57cm</a></p>
+                            <div class="iteminfo">
+                                <P class="jiaqian">￥198</P>
+                                <span class="delect">
+                                    <del>￥228</del>
+                                </span>
+                                <span class="comment">14已评价</span>
+                            </div>
+                </li>
+                <li class="newitem">
+                                <a href="#" class="itemimg"><img src="./images/kameng.png"/></a>
+                                <p class="itemtitle"><a>kenmont 卡蒙 网球帽女夏天防紫外线伸缩遮阳帽户外运动跑步速干太阳帽空顶帽子防晒帽3228  可调节 57cm</a></p>
+                                <div class="iteminfo">
+                                    <P class="jiaqian">￥198</P>
+                                    <span class="delect">
+                                        <del>￥228</del>
+                                    </span>
+                                    <span class="comment">14已评价</span>
+                                </div>
+                </li>
+                <li class="newitem">
+                                <a href="#" class="itemimg"><img src="./images/kameng.png"/></a>
+                                <p class="itemtitle"><a>kenmont 卡蒙 网球帽女夏天防紫外线伸缩遮阳帽户外运动跑步速干太阳帽空顶帽子防晒帽3228  可调节 57cm</a></p>
+                                <div class="iteminfo">
+                                    <P class="jiaqian">￥198</P>
+                                    <span class="delect">
+                                        <del>￥228</del>
+                                    </span>
+                                    <span class="comment">14已评价</span>
+                                </div>
+                </li>
+                <li class="newitem">
+                                <a href="#" class="itemimg"><img src="./images/kameng.png"/></a>
+                                <p class="itemtitle"><a>kenmont 卡蒙 网球帽女夏天防紫外线伸缩遮阳帽户外运动跑步速干太阳帽空顶帽子防晒帽3228  可调节 57cm</a></p>
+                                <div class="iteminfo">
+                                    <P class="jiaqian">￥198</P>
+                                    <span class="delect">
+                                        <del>￥228</del>
+                                    </span>
+                                    <span class="comment">14已评价</span>
+                                </div>
+                </li>
+                <li class="newitem">
+                                <a href="#" class="itemimg"><img src="./images/kameng.png"/></a>
+                                <p class="itemtitle"><a>kenmont 卡蒙 网球帽女夏天防紫外线伸缩遮阳帽户外运动跑步速干太阳帽空顶帽子防晒帽3228  可调节 57cm</a></p>
+                                <div class="iteminfo">
+                                    <P class="jiaqian">￥198</P>
+                                    <span class="delect">
+                                        <del>￥228</del>
+                                    </span>
+                                    <span class="comment">14已评价</span>
+                                </div>
+                </li>
+            </ul> 
+        </div>
+    </div>
+    <div id="match">
+            <div class="new">
+                <h4 class="newtitle">猜你喜欢<b>根据你的购物车商品推荐</b>
+                </h4>
+            </div>
+            <div class="newlist">
+                <ul class="oul">
+                    <li class="newitem">
+                        <a href="#" class="itemimg"><img src="./images/kameng.png"/></a>
+                        <p class="itemtitle"><a>kenmont 卡蒙 网球帽女夏天防紫外线伸缩遮阳帽户外运动跑步速干太阳帽空顶帽子防晒帽3228  可调节 57cm</a></p>
+                        <div class="iteminfo">
+                            <P class="jiaqian">￥198</P>
+                            <span class="delect">
+                                <del>￥228</del>
+                            </span>
+                            <span class="comment">14已评价</span>
+                        </div>
+                    </li>
+                    <li class="newitem">
+                            <a href="#" class="itemimg"><img src="./images/kameng.png"/></a>
+                            <p class="itemtitle"><a>kenmont 卡蒙 网球帽女夏天防紫外线伸缩遮阳帽户外运动跑步速干太阳帽空顶帽子防晒帽3228  可调节 57cm</a></p>
+                            <div class="iteminfo">
+                                <P class="jiaqian">￥198</P>
+                                <span class="delect">
+                                    <del>￥228</del>
+                                </span>
+                                <span class="comment">14已评价</span>
+                            </div>
+                    </li>
+                    <li class="newitem">
+                            <a href="#" class="itemimg"><img src="./images/kameng.png"/></a>
+                            <p class="itemtitle"><a>kenmont 卡蒙 网球帽女夏天防紫外线伸缩遮阳帽户外运动跑步速干太阳帽空顶帽子防晒帽3228  可调节 57cm</a></p>
+                            <div class="iteminfo">
+                                <P class="jiaqian">￥198</P>
+                                <span class="delect">
+                                    <del>￥228</del>
+                                </span>
+                                <span class="comment">14已评价</span>
+                            </div>
+                    </li>
+                    <li class="newitem">
+                            <a href="#" class="itemimg"><img src="./images/kameng.png"/></a>
+                            <p class="itemtitle"><a>kenmont 卡蒙 网球帽女夏天防紫外线伸缩遮阳帽户外运动跑步速干太阳帽空顶帽子防晒帽3228  可调节 57cm</a></p>
+                            <div class="iteminfo">
+                                <P class="jiaqian">￥198</P>
+                                <span class="delect">
+                                    <del>￥228</del>
+                                </span>
+                                <span class="comment">14已评价</span>
+                            </div>
+                    </li>
+                    <li class="newitem">
+                            <a href="#" class="itemimg"><img src="./images/kameng.png"/></a>
+                            <p class="itemtitle"><a>kenmont 卡蒙 网球帽女夏天防紫外线伸缩遮阳帽户外运动跑步速干太阳帽空顶帽子防晒帽3228  可调节 57cm</a></p>
+                            <div class="iteminfo">
+                                <P class="jiaqian">￥198</P>
+                                <span class="delect">
+                                    <del>￥228</del>
+                                </span>
+                                <span class="comment">14已评价</span>
+                            </div>
+                    </li>
+                </ul> 
+            </div>
+        </div>
+    <div id="match">
+                <div class="new">
+                    <h4 class="newtitle">大家都在买<b>根据你的购物车商品推荐</b>
+                    </h4>
+                </div>
+                <div class="newlist">
+                    <ul class="oul">
+                        <li class="newitem">
+                            <a href="#" class="itemimg"><img src="./images/kameng.png"/></a>
+                            <p class="itemtitle"><a>kenmont 卡蒙 网球帽女夏天防紫外线伸缩遮阳帽户外运动跑步速干太阳帽空顶帽子防晒帽3228  可调节 57cm</a></p>
+                            <div class="iteminfo">
+                                <P class="jiaqian">￥198</P>
+                                <span class="delect">
+                                    <del>￥228</del>
+                                </span>
+                                <span class="comment">14已评价</span>
+                            </div>
+                        </li>
+                        <li class="newitem">
+                                <a href="#" class="itemimg"><img src="./images/kameng.png"/></a>
+                                <p class="itemtitle"><a>kenmont 卡蒙 网球帽女夏天防紫外线伸缩遮阳帽户外运动跑步速干太阳帽空顶帽子防晒帽3228  可调节 57cm</a></p>
+                                <div class="iteminfo">
+                                    <P class="jiaqian">￥198</P>
+                                    <span class="delect">
+                                        <del>￥228</del>
+                                    </span>
+                                    <span class="comment">14已评价</span>
+                                </div>
+                        </li>
+                        <li class="newitem">
+                                <a href="#" class="itemimg"><img src="./images/kameng.png"/></a>
+                                <p class="itemtitle"><a>kenmont 卡蒙 网球帽女夏天防紫外线伸缩遮阳帽户外运动跑步速干太阳帽空顶帽子防晒帽3228  可调节 57cm</a></p>
+                                <div class="iteminfo">
+                                    <P class="jiaqian">￥198</P>
+                                    <span class="delect">
+                                        <del>￥228</del>
+                                    </span>
+                                    <span class="comment">14已评价</span>
+                                </div>
+                        </li>
+                        <li class="newitem">
+                                <a href="#" class="itemimg"><img src="./images/kameng.png"/></a>
+                                <p class="itemtitle"><a>kenmont 卡蒙 网球帽女夏天防紫外线伸缩遮阳帽户外运动跑步速干太阳帽空顶帽子防晒帽3228  可调节 57cm</a></p>
+                                <div class="iteminfo">
+                                    <P class="jiaqian">￥198</P>
+                                    <span class="delect">
+                                        <del>￥228</del>
+                                    </span>
+                                    <span class="comment">14已评价</span>
+                                </div>
+                        </li>
+                        <li class="newitem">
+                                <a href="#" class="itemimg"><img src="./images/kameng.png"/></a>
+                                <p class="itemtitle"><a>kenmont 卡蒙 网球帽女夏天防紫外线伸缩遮阳帽户外运动跑步速干太阳帽空顶帽子防晒帽3228  可调节 57cm</a></p>
+                                <div class="iteminfo">
+                                    <P class="jiaqian">￥198</P>
+                                    <span class="delect">
+                                        <del>￥228</del>
+                                    </span>
+                                    <span class="comment">14已评价</span>
+                                </div>
+                        </li>
+                    </ul> 
+                </div>
+        </div>
+    <script type="text/javascript">
+        $("#city").click(function (e) {
+            SelCity(this,e);
+            console.log("inout",$(this).val(),new Date())
+        });
+
+    </script>
+</body>
+</html>
